@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Menu from './components/menu';
 import Splash from './components/splash';
+import RecentlyAdded from './components/recentlyadded';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
         <Menu />
         <Splash />
+        <RecentlyAdded />
       </div>
     );
   }
