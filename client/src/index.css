@@ -1,7 +1,15 @@
 body {
-  margin: 0;
+  margin: 2em 2em;
   padding: 0;
+  max-width: 1000px;
   font-family: sans-serif;
   background-color: rgb(8, 6, 6);
   color: rgb(194, 85, 74);
+}
+
+.topics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  max-width: 80%;
 }

@@ -8,10 +8,10 @@ export default class Splash extends Component {
 
   componentDidMount() {
     fetch('http://localhost:8000/tutorials/topics')
-    .then(res => res.json())
-    .then(topics => {
-      this.setState({ topics });
-    });
+      .then(res => res.json())
+      .then(topics => {
+        this.setState({ topics });
+      });
   }
 
   render() {
@@ -19,11 +19,20 @@ export default class Splash extends Component {
     return (
       <div className="splash">
         <h1>What would you like to learn?</h1>
-        <ul>
+        <div className="topics">
           {this.state.topics.map(topic => {
-            return <li>{topic.name}</li>
+            return (
+              <div key={topic.name}>
+                <div className="topicName">
+                  <h2>{topic.name}</h2>
+                </div>
+                <div className="topicImage">
+                  <a href=""><img src={topic.image} alt={topic.name}/></a>
+                </div>
+              </div>
+            )
           })}
-        </ul>
+        </div>
       </div>
     )
   }
