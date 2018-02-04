@@ -1,15 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Inconsolata|Roboto+Mono');
+
 body {
   margin: 2em 2em;
   padding: 0;
-  max-width: 1000px;
+  max-width: 1200px;
   font-family: sans-serif;
-  background-color: rgb(8, 6, 6);
-  color: rgb(194, 85, 74);
+  background-color: #25292F;
+}
+
+h1 {
+  color: #31a2dc;
+  font-family: 'Fira Mono', monospace;
+}
+
+h2 {
+  color: #31dc70;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.logo {
+  font-size: 3em;
+  font-family: 'Inconsolata', monospace;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin: 2em 3em;
+  width: 15%;
+}
+
+.nav > a {
+  color: #fe8383;
+  font-family: 'Inconsolata', monospace;
+}
+
+.intro {
+  text-align: center;
+  /* margin: 0 auto; */
 }
 
 .topics {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 85%;
+}
+
+.topicName {
+  text-align: center;
+}
+
+img {
+  width: 100%;
 }
