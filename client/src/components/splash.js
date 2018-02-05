@@ -33,6 +33,8 @@ export default class Splash extends Component {
             )
           })}
         </div>
+        <a href="" className="topicsButton">View all topics</a>
+        <hr />
       </div>
     )
   }

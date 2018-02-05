@@ -18,6 +18,21 @@ h2 {
   font-family: 'Roboto Mono', monospace;
 }
 
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #343d4f;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.App {
+  margin: 1em 2em;
+  display: grid;
+  grid-gap: 1.5em;
+}
+
 .logo {
   font-size: 3em;
   font-family: 'Inconsolata', monospace;
@@ -32,11 +47,17 @@ h2 {
   position: absolute;
   margin: 2em 3em;
   width: 15%;
+  font-size: 1.1em;
 }
 
 .nav > a {
   color: #fe8383;
   font-family: 'Inconsolata', monospace;
+  text-decoration-color: #af7e7e;
+}
+
+.splash {
+  margin: 0 auto;
 }
 
 .intro {
@@ -49,13 +70,65 @@ h2 {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1em;
   margin: 0 auto;
-  max-width: 85%;
+  max-width: 90%;
 }
 
 .topicName {
   text-align: center;
 }
+.topicImage > a > img {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
 
-img {
-  width: 100%;
+.topicsButton {
+  color: #31a2dc;  
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.1em;
+  font-weight: bolder;
+  margin: 3em auto;
+  display: block;
+  width: 140px;
+  text-decoration: none;
+  border: 1px solid rgba(146, 250, 149, 0.6);
+  border-radius: 4px;
+  padding: 0.8em;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.5s;
+}
+
+.topicsButton:hover {
+  color: #fe8383;
+}
+
+.recentlyAdded > h1 {
+  text-align: center;
+}
+
+.recentTutorials {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  width: 90%;
+}
+
+.recentItem {
+  display: block;
+  border: 1px solid #31a2dc;
+  margin: 1em auto;
+}
+
+.recentItem > img {
+  width: 90%;
+  display: block;
+  margin: 1em;
+}
+
+.recentItem > .tutorialName {
+  text-align: center;
+  font-size: 1em;
+  margin: 2em;
 }
