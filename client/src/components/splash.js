@@ -22,14 +22,16 @@ export default class Splash extends Component {
         <div className="topics">
           {this.state.topics.slice(0, 6).map(topic => {
             return (
-              <div className="topicItem" key={topic.name}>
+              <a href="" className="topicLinkWrap">
+                <div className="topicItem" key={topic.name}>
                 <div className="topicImage">
-                  <a href=""><img src={topic.image} alt={topic.name} /></a>
+                    <img src={topic.image} alt={topic.name} />
                 </div>
                 <div className="topicName">
                   <h2>{topic.name}</h2>
                 </div>
               </div>
+              </a>
             )
           })}
         </div>
