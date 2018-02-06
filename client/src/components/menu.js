@@ -14,7 +14,7 @@ export default class Header extends Component {
       // not authenticated
       return (
         <div className="header">
-          <h1 className="logo">Qtorial</h1>
+          <a href="/" className="logoLink"><h1 className="logo">Qtorial</h1></a>
           <div className="nav">
             <a href="" className="signIn">Sign In</a>
             <a href="" className="register">Register</a>
