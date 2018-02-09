@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 
 const app = require('express')(),
   mongoose = require('mongoose'),
@@ -9,8 +9,10 @@ app.use("/", (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
-app.use('/tutorials', tutorials);
 
+app.use(tutorials);
+
+console.log(process.env.PORT);
 var url = process.env.DATABASEURL;
 mongoose.connect(url);
 

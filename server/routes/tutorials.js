@@ -20,6 +20,29 @@ const router    = require('express').Router(),
         console.log(res.json(allTutorials));
       }
     })
-  })
+  });
+
+  router.get("/topics/:id", function(req, res) {
+    // find topic and populate tutorials associated with it
+    topics
+      .findById(req.params.id)
+      .populate("tutorials")
+      .exec(function(err, foundTopic) {
+        if (err) {
+          console.log(err);
+        } else {
+          tutorials.find({ topic: foundTopic.name }, function(err, alltutorials) {
+            if (err) {
+              console.log(err);
+            } else {
+              res.json({
+                topic: foundTopic,
+                tutorials: alltutorials
+              });
+            }
+          });
+        }
+      });
+  });
 
   module.exports = router;
