@@ -35,10 +35,10 @@ const router    = require('express').Router(),
             if (err) {
               console.log(err);
             } else {
-              res.json({
+              console.log(res.json({
                 topic: foundTopic,
                 tutorials: alltutorials
-              });
+              }));
             }
           });
         }
