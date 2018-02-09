@@ -7,7 +7,7 @@ export default class Splash extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/tutorials/topics')
+    fetch('http://localhost:8000/topics')
       .then(res => res.json())
       .then(topics => {
         this.setState({ topics });
@@ -22,20 +22,20 @@ export default class Splash extends Component {
         <div className="topics">
           {this.state.topics.slice(0, 6).map(topic => {
             return (
-              <a href="" className="topicLinkWrap">
-                <div className="topicItem" key={topic.name}>
-                <div className="topicImage">
-                    <img src={topic.image} alt={topic.name} />
-                </div>
-                <div className="topicName">
-                  <h2>{topic.name}</h2>
-                </div>
+              <div className="topicItem">
+                <a href="" className="topicLinkWrap" key={topic.name}>
+                  <div className="topicImage">
+                      <img src={topic.image} alt={topic.name} />
+                  </div>
+                  <div className="topicName">
+                    <h2>{topic.name}</h2>
+                  </div>
+                </a>
               </div>
-              </a>
             )
           })}
         </div>
-        <a href="" className="topicsButton">View all topics</a>
+        <a href="/topics" className="topicsButton">View all topics</a>
         <hr />
       </div>
     )

@@ -26,7 +26,7 @@ hr {
   padding: 0;
 }
 
-.App {
+.Home {
   margin: 1em 2em;
   display: grid;
   grid-gap: 2em;
@@ -137,7 +137,7 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1.5em;
-  width: 90%;
+  /* width: 80%; */
 }
 
 .recentItem {
@@ -146,22 +146,72 @@ hr {
   border-radius: 5px;  
   padding: 0.5em;
   transition: border .3s;
+  /* width: 70%; */
 }
 
 .recentItem:hover {
   border: 1px solid #fe8383;    
 }
 
-.recentItem > img {
+.recentItemLink {
+  text-decoration: none;  
+}
+
+.recentItemLink > img {
   width: 330px;
   height: 190px;
+  /* width: 90%; */
   display: block;
   margin: 1em auto;
 }
 
-.recentItem > .tutorialName {
+.recentItemLink > .tutorialName {
   text-align: center;
   font-size: 1em;
   margin: 2em;
+  display: block;
+  text-decoration: none;
+  text-decoration-style: inherit;
+}
+
+.allTopics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+  padding: 0 5em;
+}
+
+.topicDescription {
+  color: #31a2dc;
+  font-family: 'Inconsolata', monospace;
+  padding: 0 1em;
+}
+
+.alltopicsName {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.alltopicsItem {
+  border: 1px solid #26688a;
+  border-radius: 5px;
+  padding: 1em;
+  transition: border .3s;
+}
+.alltopicsItem h2 {
+  transition: color .5s;
+}
+
+.alltopicsItem:hover {
+  border: 1px solid #fe8383; 
+}
+
+.alltopicsItem:hover h2 {
+  color: #31a2dc;
+}
+
+.alltopicsImage > img {
+  /* width: 90%; */
+  margin: auto;
   display: block;
 }

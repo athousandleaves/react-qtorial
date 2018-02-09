@@ -7,12 +7,13 @@ export default class RecentlyAdded extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/tutorials/tutorials')
+    fetch('http://localhost:8000/tutorials')
       .then(res => res.json())
       .then(tutorials => {
         this.setState({ tutorials });
       });
   }
+
   render() {
     if (!this.state.tutorials) return null;
     return (
@@ -22,8 +23,10 @@ export default class RecentlyAdded extends Component {
         {this.state.tutorials.slice(0, 9).map(tutorial => {
             return (
               <div className="recentItem" key={tutorial._id}>
-                <img src={tutorial.thumbnail} alt={tutorial.name} />
-                <h2 className="tutorialName">{tutorial.name}</h2>
+                <a href="" className="recentItemLink">
+                  <img src={tutorial.thumbnail} alt={tutorial.name} />
+                  <h2 className="tutorialName">{tutorial.name}</h2>
+                </a> 
               </div>
             )
           })}
