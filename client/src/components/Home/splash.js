@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 export default class Splash extends Component {
   constructor(props) {
@@ -22,15 +23,15 @@ export default class Splash extends Component {
         <div className="topics">
           {this.state.topics.slice(0, 6).map(topic => {
             return (
-              <div className="topicItem">
-                <a href="" className="topicLinkWrap" key={topic.name}>
+              <div className="topicItem" key={topic.name}>
+                <Link to={`/topics/${topic._id}`} className="topicLinkWrap">
                   <div className="topicImage">
                       <img src={topic.image} alt={topic.name} />
                   </div>
                   <div className="topicName">
                     <h2>{topic.name}</h2>
                   </div>
-                </a>
+                </Link>
               </div>
             )
           })}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Splash from './splash';
 import RecentlyAdded from './recentlyadded';
-import ShowTopic from '../Topics/showTopic';
 
 class Home extends Component {
   render() {
@@ -9,7 +8,6 @@ class Home extends Component {
       <div className="Home">
         <Splash />
         <RecentlyAdded />
-        <ShowTopic />
       </div>
     );
   }
