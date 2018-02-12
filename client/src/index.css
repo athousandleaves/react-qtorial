@@ -271,7 +271,7 @@ hr {
 }
 
 .showTopicItem:hover {
-  border: 1px solid #fe8383;   
+  border: 1px solid #fe8383; 
 }
 
 
@@ -279,11 +279,57 @@ hr {
   width: 100%;
 }
 
-.showTutorialItem {
-  display: block;
+.showTutorial {
+  width: 70%;
+  display: grid;
+  grid-gap: 2em;
   margin: 0 auto;
 }
 
+.showTutorialItem {
+  display: block;
+}
+
 .showTutorialItem > iframe {
-  width: 1200px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.videoContainer {
+  width: 1600px;
+}
+
+.showTutorialName {
+  display: inline-block;
+}
+
+.showTutorialComments {
+  border: 1px solid #26688a;
+  border-radius: 5px;
+  padding: 1.5em;
+  width: 60%;
+}
+
+.commentsHeader {
+  margin: 0 auto;
+  text-decoration: underline;
+}
+
+.commentAuthor {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #fe8383; 
+  margin-bottom: 0.25em;
+}
+
+.commentText {
+  color: #31dc70; 
+  margin: 1em; 
+}
+
+.commentDate {
+  color: #31dc70; 
+  font-size: 0.9em;
+  font-family: 'Inconsolata', monospace;  
 }
