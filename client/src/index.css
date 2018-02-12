@@ -26,6 +26,10 @@ hr {
   padding: 0;
 }
 
+.header {
+  padding-bottom: 3.5em;
+}
+
 .Home {
   margin: 1em 2em;
   display: grid;
@@ -37,6 +41,7 @@ hr {
   font-family: 'Inconsolata', monospace;
   display: inline-block;
   transition: text-shadow 1s;
+  margin: 0;
 }
 
 .logoLink {
@@ -214,4 +219,71 @@ hr {
   /* width: 90%; */
   margin: auto;
   display: block;
+}
+
+.showTopic {
+  display: grid;
+  grid-gap: 2em;
+}
+
+.showTopicIntro {
+  display: grid;
+  grid-gap: 0.75em;
+}
+
+.showTopicName {
+  text-align: center;
+  font-size: 2.75em;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.showTopicImage {
+  display: inline-block;
+  margin: 0 auto;
+  width: 150px;
+  /* width: 90%; */
+  display: block;
+  margin: 0 auto;
+}
+
+.showTopicDescription {
+  color: #31dc70;
+  font-family: 'Inconsolata', monospace;
+  padding: 0 10em;
+  margin: 0;
+  text-align: center;
+}
+
+.showTopicTutorials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2.5em;
+  padding: 0 5em;
+}
+
+.showTopicItem {
+  width: 100%;
+  border: 1px solid #26688a;
+  border-radius: 5px;
+  padding: 1em;
+  transition: border .3s;
+}
+
+.showTopicItem:hover {
+  border: 1px solid #fe8383;   
+}
+
+
+.showTopicLink > img {
+  width: 100%;
+}
+
+.showTutorialItem {
+  display: block;
+  margin: 0 auto;
+}
+
+.showTutorialItem > iframe {
+  width: 1200px;
 }
