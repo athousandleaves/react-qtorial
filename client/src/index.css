@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono|Inconsolata|Roboto+Mono');
 
 body {
-  margin: 2em 2em;
+  margin: 2em auto;
   padding: 0;
   font-family: sans-serif;
   background-color: #25292F;
@@ -27,7 +27,8 @@ hr {
 }
 
 .header {
-  padding-bottom: 3.5em;
+  padding-bottom: 3em;
+  padding-left: 1em;
 }
 
 .Home {
@@ -89,7 +90,7 @@ hr {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1em;
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 95%;
 }
 
 .topicItem {
@@ -133,6 +134,11 @@ hr {
   color: #fe8383;
 }
 
+.recentlyAdded {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .recentlyAdded > h1 {
   text-align: center;
 }
@@ -170,7 +176,7 @@ hr {
   margin: 1em auto;
 }
 
-.recentItemLink > .tutorialName {
+.tutorialName {
   text-align: center;
   font-size: 1em;
   margin: 1em 2em;
@@ -181,7 +187,7 @@ hr {
 
 .allTopics {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2em;
   padding: 0 5em;
 }
@@ -189,18 +195,19 @@ hr {
 .topicDescription {
   color: #31a2dc;
   font-family: 'Inconsolata', monospace;
-  padding: 0 1em;
+  font-size: 0.95em;
+  padding: 0 2.3em;
 }
 
 .alltopicsName {
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 
 .alltopicsItem {
   border: 1px solid #26688a;
   border-radius: 5px;
-  padding: 1em;
+  padding: 0.4em;
   transition: border .3s;
 }
 .alltopicsItem h2 {
@@ -217,6 +224,7 @@ hr {
 
 .alltopicsImage > img {
   /* width: 90%; */
+  width: 20%;
   margin: auto;
   display: block;
 }
@@ -250,8 +258,9 @@ hr {
 .showTopicDescription {
   color: #31dc70;
   font-family: 'Inconsolata', monospace;
-  padding: 0 10em;
-  margin: 0;
+  max-width: 850px;
+  /* padding: 0 10em; */
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -263,11 +272,20 @@ hr {
 }
 
 .showTopicItem {
-  width: 100%;
+  /* width: 100%; */
   border: 1px solid #26688a;
   border-radius: 5px;
-  padding: 1em;
+  /* padding: 1.8em; */
   transition: border .3s;
+  /* font-size: 0.8em; */
+}
+
+.showTopicLink > img{
+  width: 330px;
+  height: 190px;
+  /* width: 90%; */
+  display: block;
+  margin: 1em auto;
 }
 
 .showTopicItem:hover {
@@ -279,15 +297,11 @@ hr {
   text-decoration: none;
 }
 
-.showTopicLink > img {
-  width: 100%;
-}
-
 .showTutorial {
   width: 80%;
   display: grid;
   grid-gap: 2em;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .showTutorialItem {
@@ -301,7 +315,7 @@ hr {
 }
 
 .videoContainer {
-  /* width: 1600px; */
+  text-align: center;
   width: 100%;
 }
 
@@ -340,7 +354,7 @@ hr {
 
 .commentAuthor {
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.4em;
   color: #fe8383; 
   margin-bottom: 0.25em;
 }

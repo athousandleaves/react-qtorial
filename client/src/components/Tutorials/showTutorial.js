@@ -19,11 +19,12 @@ export default class ShowTutorial extends Component {
 
   render() {
     if (!this.state.tutorial) return null;
+
     return (
       <div className="showTutorial">
         <div className="showTutorialItem">
           <div className="videoContainer">
-          <iframe width="1120" height="630" title={this.state.tutorial.name} src={`https://www.youtube.com/embed/${this.state.tutorial.videoID}`} frameBorder="0"></iframe>          
+          <iframe width="1220" height="730" title={this.state.tutorial.name} src={`https://www.youtube.com/embed/${this.state.tutorial.videoID}`} frameBorder="0"></iframe>          
           </div>
           <hr/>
           <h2 className="showTutorialName">{this.state.tutorial.name}</h2>
@@ -32,6 +33,7 @@ export default class ShowTutorial extends Component {
         <hr/>
         <div className="showTutorialComments">
           <h2 className="commentsHeader">Comments</h2>
+          <span><a href="">Post a comment</a></span>
         {this.state.tutorial.comments.map(comment => {
           return (
             <div className="showCommentItem">
