@@ -275,12 +275,16 @@ hr {
 }
 
 
+.showTopicLink {
+  text-decoration: none;
+}
+
 .showTopicLink > img {
   width: 100%;
 }
 
 .showTutorial {
-  width: 70%;
+  width: 80%;
   display: grid;
   grid-gap: 2em;
   margin: 0 auto;
@@ -297,18 +301,36 @@ hr {
 }
 
 .videoContainer {
-  width: 1600px;
+  /* width: 1600px; */
+  width: 100%;
 }
 
 .showTutorialName {
   display: inline-block;
+  margin: 0 auto;
+  padding: 1em;
+  padding-bottom: .25em;
+}
+
+.showTutorialDescription {
+  color: #31a2dc;
+  max-width: 90%;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em;
+  padding: 0.5em 2em; 
+  margin: 0.4em 0;   
+  display: block;
 }
 
 .showTutorialComments {
   border: 1px solid #26688a;
   border-radius: 5px;
   padding: 1.5em;
-  width: 60%;
+  width: 90%;
+}
+
+.showCommentItem{
+  padding: 0.5em 1.5em;
 }
 
 .commentsHeader {
@@ -326,10 +348,12 @@ hr {
 .commentText {
   color: #31dc70; 
   margin: 1em; 
+  padding: .5em;
+  font-family: 'Roboto Mono', monospace;  
 }
 
 .commentDate {
-  color: #31dc70; 
+  color: #3e8659; 
   font-size: 0.9em;
-  font-family: 'Inconsolata', monospace;  
+  font-family: 'Inconsolata', monospace;
 }

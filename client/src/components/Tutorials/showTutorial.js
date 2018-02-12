@@ -25,8 +25,11 @@ export default class ShowTutorial extends Component {
           <div className="videoContainer">
           <iframe width="1120" height="630" title={this.state.tutorial.name} src={`https://www.youtube.com/embed/${this.state.tutorial.videoID}`} frameBorder="0"></iframe>          
           </div>
+          <hr/>
           <h2 className="showTutorialName">{this.state.tutorial.name}</h2>
+          <p className="showTutorialDescription">{this.state.tutorial.description}</p>
         </div>
+        <hr/>
         <div className="showTutorialComments">
           <h2 className="commentsHeader">Comments</h2>
         {this.state.tutorial.comments.map(comment => {
