@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 export default class ShowTutorial extends Component {
   
@@ -33,7 +34,7 @@ export default class ShowTutorial extends Component {
         <hr/>
         <div className="showTutorialComments">
           <h2 className="commentsHeader">Comments</h2>
-          <span><a href="">Post a comment</a></span>
+          <span><Link to={`/tutorials/${this.state.tutorial._id}/comments/new`}>Post a comment</Link></span>
         {this.state.tutorial.comments.map(comment => {
           return (
             <div className="showCommentItem">

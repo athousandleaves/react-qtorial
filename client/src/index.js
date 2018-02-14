@@ -7,6 +7,7 @@ import Topics from './components/Topics/Topics';
 import Menu from './components/menu';
 import ShowTopic from './components/Topics/showTopic';
 import ShowTutorial from './components/Tutorials/showTutorial';
+import NewComment from './components/Comments/newComment';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -15,8 +16,9 @@ ReactDOM.render(
     <Menu />
     <Route exact path='/' component={Home} />
     <Route exact path ='/topics' component={Topics} />
-    <Route path='/topics/:id' component={ShowTopic} />
-    <Route path='/tutorials/:id' component={ShowTutorial} />
+    <Route exact path='/topics/:id' component={ShowTopic} />
+    <Route exact path='/tutorials/:id' component={ShowTutorial} />
+    <Route exact path='/tutorials/:id/comments/new' component={NewComment} />
   </div>
 </BrowserRouter>
 , document.getElementById('root'));
