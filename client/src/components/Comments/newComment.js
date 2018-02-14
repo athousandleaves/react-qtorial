@@ -4,8 +4,8 @@ export default class NewComment extends Component {
   render() {
     return (
       <div>
-        <form action="/tutorials/{{{tutorial._id}}}/comments" method="POST">
-          <div class="form-group">
+        <form>
+          <div >
             <input
               type="text"
               placeholder="Type comment here."
