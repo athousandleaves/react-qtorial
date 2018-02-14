@@ -241,8 +241,9 @@ hr {
 
 .showTopicName {
   text-align: center;
-  font-size: 2.75em;
+  font-size: 2.8em;
   padding: 0;
+  padding-bottom: 0.25em;
   margin: 0 auto;
 }
 
@@ -262,6 +263,12 @@ hr {
   /* padding: 0 10em; */
   margin: 0 auto;
   text-align: center;
+}
+
+.showTopicVideosHeader {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 0;
 }
 
 .showTopicTutorials {

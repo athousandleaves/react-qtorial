@@ -31,6 +31,7 @@ export default class showTopic extends Component {
           </p>
         </div>
         <hr />
+        <h2 className="showTopicVideosHeader">Tutorial Videos</h2>
         <div className="showTopicTutorials">
           {this.state.tutorials.map(tutorial => {
             return (
