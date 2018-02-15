@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
 import Home from './components/Home/Home';
 import Register from './components/Register/register';
+import Login from './components/Login/login';
 import Topics from './components/Topics/Topics';
 import Menu from './components/menu';
 import ShowTopic from './components/Topics/showTopic';
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Menu />
     <Route exact path='/' component={Home} />
     <Route exact path='/register' component={Register} />
+    <Route exact path='/login' component={Login} />
     <Route exact path='/topics' component={Topics} />
     <Route exact path='/topics/:id' component={ShowTopic} />
     <Route exact path='/tutorials/:id' component={ShowTutorial} />

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-export default class Register extends Component {
-  render () {
-    return (
+export default class Login extends Component {
+  render() {
+    return(
       <div className="registerContainer">
-        <h1>Register</h1>
-        <form action="/register" method="POST">
+        <h1>Sign In</h1>
+        <form action="/login" method="POST">
         <div class="form-group">
             <input className="form-control" type="text" name="username" placeholder="Username" />
         </div>
@@ -13,7 +13,7 @@ export default class Register extends Component {
             <input className="form-control" type="password" name="password" placeholder="Password" />
         </div>
         <div class="form-group">
-            <button className="registerUserButton">Submit</button>
+            <button className="loginUserButton">Sign In</button>
         </div>
         </form>
       </div>

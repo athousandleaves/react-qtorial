@@ -354,7 +354,7 @@ hr {
   color: #31a2dc; 
   font-family: 'Inconsolata', monospace;
   font-size: 1em;
-  border: 1px solid rgba(146, 250, 149, 0.6);
+  border: 1px solid rgba(146, 250, 149, 0.4);
   border-radius: 4px;
   padding: 0.6em;
   margin-right: .75em;
@@ -364,6 +364,7 @@ hr {
 .submitCommentForm > input:focus {
   width: 650px;
   background-color: rgb(39, 39, 39);  
+  border: 1px solid rgba(146, 250, 149, 0.6);  
 }
 
 .submitCommentForm > button {
@@ -420,4 +421,69 @@ hr {
   color: #3e8659; 
   font-size: 0.9em;
   font-family: 'Inconsolata', monospace;
+}
+
+.registerContainer {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-control {
+  color: #31a2dc;  
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.25em;
+  width: 315px;
+  text-decoration: none;
+  background-color: #25292F;  
+  border: 1px solid rgba(146, 250, 149, 0.4);
+  border-radius: 4px;
+  padding: .5em;
+  margin: .5em 0;
+  transition: color 0.5s;
+}
+
+.form-control:focus {
+  background-color: rgb(39, 39, 39);  
+}
+
+.registerUserButton{
+  color: #31a2dc;  
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.25em;
+  font-weight: bolder;
+  width: 125px;
+  text-decoration: none;
+  background-color: #25292F;  
+  border: 1px solid rgba(146, 250, 149, 0.8);
+  border-radius: 4px;
+  padding: 0.6em;
+  margin: 1em 0;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.5s;
+}
+
+.registerUserButton:hover {
+  color: #fe8383;
+}
+
+.loginUserButton{
+  color: #31a2dc;  
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.25em;
+  font-weight: bolder;
+  width: 125px;
+  text-decoration: none;
+  background-color: #25292F;  
+  border: 1px solid rgba(146, 250, 149, 0.8);
+  border-radius: 4px;
+  padding: 0.6em;
+  margin: 1em 0;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.5s;
+}
+
+.loginUserButton:hover {
+  color: #fe8383;
 }
