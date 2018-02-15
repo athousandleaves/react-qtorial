@@ -8,7 +8,8 @@ router.get("/topics", function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(res.json(allTopics));
+      console.log(allTopics);
+      res.json(allTopics);
     }
   })
 });
@@ -18,7 +19,8 @@ router.get("/tutorials", function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(res.json(allTutorials));
+      console.log(allTutorials);
+      res.json(allTutorials);
     }
   })
 });
@@ -36,10 +38,10 @@ router.get("/topics/:id", function (req, res) {
           if (err) {
             console.log(err);
           } else {
-            console.log(res.json({
+            res.json({
               topic: foundTopic,
               tutorials: alltutorials
-            }));
+            });
           }
         });
       }
@@ -55,7 +57,7 @@ router.get("/tutorials/:id", function (req, res) {
       if (err) {
         console.log(err);
       } else {
-        console.log(res.json(foundTutorial));
+        res.json(foundTutorial);
       }
     });
 });
