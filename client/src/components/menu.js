@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
+
 
 export default class Header extends Component {
   render() {
@@ -17,7 +19,7 @@ export default class Header extends Component {
           <a href="/" className="logoLink"><h1 className="logo">Qtorial</h1></a>
           <div className="nav">
             <a href="" className="signIn">Sign In</a>
-            <a href="" className="register">Register</a>
+            <Link to={`/register`} className="register">Register</Link>
           </div>
         </div>
       );

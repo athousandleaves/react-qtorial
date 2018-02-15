@@ -343,6 +343,49 @@ hr {
   display: block;
 }
 
+.submitCommentForm {
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.submitCommentForm > input {
+  width: 165px;
+  background-color: #25292F;
+  color: #31a2dc; 
+  font-family: 'Inconsolata', monospace;
+  font-size: 1em;
+  border: 1px solid rgba(146, 250, 149, 0.6);
+  border-radius: 4px;
+  padding: 0.6em;
+  margin-right: .75em;
+  transition: width 0.3s;
+}
+
+.submitCommentForm > input:focus {
+  width: 650px;
+  background-color: rgb(39, 39, 39);  
+}
+
+.submitCommentForm > button {
+  color: #31a2dc;  
+  font-family: 'Inconsolata', monospace;
+  font-size: 1em;
+  font-weight: bolder;
+  width: 115px;
+  text-decoration: none;
+  background-color: #25292F;  
+  border: 1px solid rgba(146, 250, 149, 0.6);
+  border-radius: 4px;
+  padding: 0.6em;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.5s;
+}
+
+.submitCommentForm > button:hover {
+  color: #fe8383;
+}
+
 .showTutorialComments {
   border: 1px solid #26688a;
   border-radius: 5px;
