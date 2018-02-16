@@ -1,5 +1,5 @@
-var mongoose = require("mongoose");
-// var passportLocalMongoose = require("passport-local-mongoose");
+var mongoose = require("mongoose"),
+    bcrypt   = require('bcrypt');
 
 var UserSchema = new mongoose.Schema({
   username: String,
@@ -13,6 +13,12 @@ var UserSchema = new mongoose.Schema({
   ]
 });
 
-// UserSchema.plugin(passportLocalMongoose);
+UserSchema.pre('save', function(next) {
+  const { password } = this;
+  bcrypt.hash(password, 10, (err, hash) => {
+    this.password = hash;
+    next();
+  });
+});
 
 module.exports = mongoose.model("User", UserSchema);
