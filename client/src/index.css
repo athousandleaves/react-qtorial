@@ -27,14 +27,15 @@ hr {
 }
 
 .header {
-  padding-bottom: 3em;
+  padding-bottom: 1em;
   padding-left: 1em;
 }
 
 .Home {
   margin: 1em 2em;
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 2.5em;
+  padding: 3em 0;
 }
 
 .logo {
@@ -118,7 +119,7 @@ hr {
   font-family: 'Inconsolata', monospace;
   font-size: 1.1em;
   font-weight: bolder;
-  margin: 3em auto;
+  margin: 4em auto;
   display: block;
   width: 140px;
   text-decoration: none;
@@ -319,6 +320,7 @@ hr {
   display: block;
   margin: 0 auto;
   width: 100%;
+  border: 1px solid #343d4f;
 }
 
 .videoContainer {
@@ -372,7 +374,7 @@ hr {
   font-family: 'Inconsolata', monospace;
   font-size: 1em;
   font-weight: bolder;
-  width: 115px;
+  width: 125px;
   text-decoration: none;
   background-color: #25292F;  
   border: 1px solid rgba(146, 250, 149, 0.6);

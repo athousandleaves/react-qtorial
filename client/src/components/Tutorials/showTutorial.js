@@ -24,7 +24,7 @@ export default class ShowTutorial extends Component {
       <div className="showTutorial">
         <div className="showTutorialItem">
           <div className="videoContainer">
-          <iframe width="1220" height="730" title={this.state.tutorial.name} src={`https://www.youtube.com/embed/${this.state.tutorial.videoID}`} frameBorder="0"></iframe>          
+          <iframe width="1120" height="630" title={this.state.tutorial.name} src={`https://www.youtube.com/embed/${this.state.tutorial.videoID}`} frameBorder="0"></iframe>          
           </div>
           <hr/>
           <h2 className="showTutorialName">{this.state.tutorial.name}</h2>
@@ -43,7 +43,7 @@ export default class ShowTutorial extends Component {
               name="comment[text]"
             />
             <button type="submit">
-              Add comment
+              Save comment
             </button>
         </form>
         </div>
