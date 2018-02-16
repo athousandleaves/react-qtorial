@@ -6,8 +6,11 @@ const app = require('express')(),
   tutorials = require("./routes/tutorials");
   users     = require("./routes/users");
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use("/", (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", '*');
   next();
 });
 

@@ -1,7 +1,7 @@
 const router = require('express').Router(),
       User   = require('../models/users.js');
 
-router.get("/user", function(req, res) {
+router.get("/users", function(req, res) {
   User.find({}, function (err, allUsers) {
     if (err) {
       console.log(err);
@@ -14,7 +14,7 @@ router.get("/user", function(req, res) {
 
 router.post('/users', function(req, res) {
   var newUser = new User({username: req.body.username, password: req.body.password});
-  User.register(newUser, req.body.password, function(err, user) {
+  User.create(newUser, function(err, user) {
     if (err) {
       console.log(err);
     } else {
