@@ -8,7 +8,6 @@ router.get("/topics", function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(allTopics);
       res.json(allTopics);
     }
   })
@@ -19,7 +18,6 @@ router.get("/tutorials", function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(allTutorials);
       res.json(allTutorials);
     }
   })

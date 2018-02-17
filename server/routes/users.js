@@ -21,8 +21,6 @@ router.post('/users', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      // console.log(user);
-      // res.json(user);
       // create the token
       var token = jwt.sign({ id: user._id }, config.secret, {
         expiresIn: 86400 // 24 hours
@@ -32,23 +30,30 @@ router.post('/users', function(req, res) {
   }); 
 });
 
-router.get('/me', function(req, res) {
-  var token = req.headers['x-access-token'];
-  if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
-
-  jwt.verify(token, config.secret, function(err, decoded) {
-    if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token. '})
-    User.findById(decoded.id,
-      { password: 0 }, // project password for security
-      function(err, user) {
-      if(err) return res.status(500).send("There was a problem finding the user.");
-      if(!user) return res.status(404).send("No user found.");
+router.get('/me', verifyToken, function (req, res, next) {
+  User.findById(decoded.id,
+    { password: 0 }, // project password for security
+    function (err, user) {
+      if (err) return res.status(500).send("There was a problem finding the user.");
+      if (!user) return res.status(404).send("No user found.");
 
       res.status(200).send(user);
-    });
-
   });
 });
+
+//middleware function
+function verifyToken(req, res, next) {
+  var token = req.headers['x-access-token'];
+  if (!token)
+    return res.status(403).send({ auth: false, message: 'No token provided.' });
+  jwt.verify(token, config.secret, function(err, decoded) {
+    if (err)
+    return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
+    // if everything good, save to request for use in other routes
+    req.userId = decoded.id;
+    next();
+  });
+}
 
 router.post('/login', function(req, res) {
   User.findOne({ username: req.body.username }, function(err, user) {
@@ -57,7 +62,6 @@ router.post('/login', function(req, res) {
 
     var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
     if (!passwordIsValid) return res.status(401).send({ auth: false, token: null });
-
     var token = jwt.sign({ id: user._id }, config.secret, {
       expiresIn: 86400 // 24 hours
     });
