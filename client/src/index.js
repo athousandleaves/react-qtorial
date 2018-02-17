@@ -5,6 +5,7 @@ import './index.css';
 import Home from './components/Home/Home';
 import Register from './components/Register/register';
 import Login from './components/Login/login';
+import Logout from './components/Logout/logout';
 import Topics from './components/Topics/Topics';
 import Menu from './components/menu';
 import ShowTopic from './components/Topics/showTopic';
@@ -21,7 +22,7 @@ class Routes extends React.Component {
   componentDidMount() {
     //determine if token is valid
     localStorage.getItem('login') ?
-    this.setState({ loading: false, authed: true }) :
+    this.setState({ loading: false, authed: true, username: JSON.parse(localStorage.getItem('login')).username }) :
     this.setState({ loading: false })
   }  
 
@@ -30,13 +31,14 @@ class Routes extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Menu authed={this.state.authed}/>
+          <Menu authed={this.state.authed} username={this.state.username} />
           <Route exact path='/' component={Home} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/topics' component={Topics} />
           <Route exact path='/topics/:id' component={ShowTopic} />
           <Route exact path='/tutorials/:id' component={ShowTutorial} />
+          <Route exact path='/logout' component={Logout} />
         </div>
       </BrowserRouter>
     )

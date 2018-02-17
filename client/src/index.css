@@ -81,9 +81,8 @@ hr {
   right: 0;
   position: absolute;
   margin: 2em 3em;
-  width: 40%;
-  font-size: 1.1em;
   text-align: center;
+  font-size: 1.1em;
 }
 
 .authNav > a {
@@ -507,4 +506,10 @@ hr {
 
 .loginUserButton:hover {
   color: #fe8383;
+}
+
+.logoutMessage {
+  margin: 0 auto;
+  padding-top: 7em;
+  text-align: center;
 }

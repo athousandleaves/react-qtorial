@@ -30,11 +30,15 @@ export default class Register extends Component {
         password: this.state.password.value
       })
     })
-    .then(response => response.json())
+    .then(response =>  {
+      if (!response.ok) { window.location.pathname = '/404' }
+      return response.json()
+    })
     .then(json => {
-      console.log(json);
-      this.setState({success: true})
-      window.location.pathname = '/'
+      this.setState({ success: true })
+      localStorage.setItem('login', 
+        JSON.stringify({ username: json.username, token: json.token }));
+        window.location.pathname = '/'
     })
   }
 

@@ -8,7 +8,7 @@ export default class Header extends Component {
         <div className="header">
         <a href="/" className="logoLink"><h1 className="logo">Qtorial</h1></a>          
         <div className="authNav">
-            <Link to={`/user/`} className="signIn">Logged in as {this.props.username}</Link>
+            <Link to={`/user/`} className="signIn">Logged in as <strong>{this.props.username}</strong></Link>
             <Link to={`/postnewtutorial`} className="postNewTutorial">Post New Tutorial</Link>
             <Link to={`/logout`} className="logout">Log Out</Link>
           </div>
