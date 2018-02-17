@@ -26,7 +26,7 @@ router.post('/users', function(req, res) {
         expiresIn: 86400 // 24 hours
       });
     }
-    res.status(200).send({ auth: true, token: token })
+    res.status(200).send({ auth: true, token: token, username: req.body.username })
   }); 
 });
 
@@ -66,7 +66,7 @@ router.post('/login', function(req, res) {
       expiresIn: 86400 // 24 hours
     });
 
-    res.status(200).send({ auth: true, token: token })
+    res.status(200).send({ auth: true, token: token, username: req.body.username })
   });
 });
 
