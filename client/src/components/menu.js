@@ -6,9 +6,12 @@ export default class Header extends Component {
     if (this.props.authed) {
       return (
         <div className="header">
-          <li>Post New Tutorial</li>
-          <li>Logged in as {this.props.username}</li>
-          <li>Logout</li>
+        <a href="/" className="logoLink"><h1 className="logo">Qtorial</h1></a>          
+        <div className="authNav">
+            <Link to={`/user/`} className="signIn">Logged in as {this.props.username}</Link>
+            <Link to={`/postnewtutorial`} className="postNewTutorial">Post New Tutorial</Link>
+            <Link to={`/logout`} className="logout">Log Out</Link>
+          </div>
         </div>
       );
     } else {

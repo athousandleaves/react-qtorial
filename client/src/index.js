@@ -9,21 +9,39 @@ import Topics from './components/Topics/Topics';
 import Menu from './components/menu';
 import ShowTopic from './components/Topics/showTopic';
 import ShowTutorial from './components/Tutorials/showTutorial';
-import NewComment from './components/Comments/newComment';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-<BrowserRouter>
-  <div>
-    <Menu />
-    <Route exact path='/' component={Home} />
-    <Route exact path='/register' component={Register} />
-    <Route exact path='/login' component={Login} />
-    <Route exact path='/topics' component={Topics} />
-    <Route exact path='/topics/:id' component={ShowTopic} />
-    <Route exact path='/tutorials/:id' component={ShowTutorial} />
-    <Route exact path='/tutorials/:id/comments/new' component={NewComment} />
-  </div>
-</BrowserRouter>
-, document.getElementById('root'));
+
+class Routes extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { authed: false, loading: true };
+  }
+
+  componentDidMount() {
+    //determine if token is valid
+    localStorage.getItem('login') ?
+    this.setState({ loading: false, authed: true }) :
+    this.setState({ loading: false })
+  }  
+
+  render() {
+    if (this.state.loading) return null;
+    return (
+      <BrowserRouter>
+        <div>
+          <Menu authed={this.state.authed}/>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/topics' component={Topics} />
+          <Route exact path='/topics/:id' component={ShowTopic} />
+          <Route exact path='/tutorials/:id' component={ShowTutorial} />
+        </div>
+      </BrowserRouter>
+    )
+  }
+}
+
+ReactDOM.render(<Routes />, document.getElementById('root'));
 registerServiceWorker();

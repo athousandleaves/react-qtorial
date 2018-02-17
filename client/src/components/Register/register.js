@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 
 export default class Register extends Component {
   constructor(props) {
@@ -14,6 +13,8 @@ export default class Register extends Component {
       success: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePassChange = this.handlePassChange.bind(this);
+    this.handleUserChange = this.handleUserChange.bind(this);
   }
 
   handleSubmit = (e) => {
@@ -33,7 +34,7 @@ export default class Register extends Component {
     .then(json => {
       console.log(json);
       this.setState({success: true})
-      {window.location.pathname = '/'}
+      window.location.pathname = '/'
     })
   }
 
@@ -42,7 +43,7 @@ export default class Register extends Component {
   }
 
   handlePassChange = (e) => {
-    this.setState({ password: {value: e.target.value } })
+    this.setState({ password: { value: e.target.value } })
   }
 
   render () {
@@ -54,7 +55,7 @@ export default class Register extends Component {
             <input className="form-control" onChange={this.handleUserChange} value={this.state.username.value} type="text" name="username" placeholder="Username" />
         </div>
         <div className="form-group">
-            <input className="form-control" onChange={this.handlePassChange} type="password" name="password" placeholder="Password" />
+            <input className="form-control" onChange={this.handlePassChange} value={this.state.password.value} type="password" name="password" placeholder="Password" />
         </div>
         <div className="form-group">
             <button className="registerUserButton">Submit</button>

@@ -73,6 +73,25 @@ hr {
   text-decoration-color: #af7e7e;
 }
 
+.authNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin: 2em 3em;
+  width: 40%;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.authNav > a {
+  color: #fe8383;
+  font-family: 'Inconsolata', monospace;
+  text-decoration-color: #af7e7e;
+}
+
 .splash {
   margin: 0 auto;
 }
