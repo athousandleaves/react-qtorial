@@ -1,8 +1,9 @@
-const router = require('express').Router(),
-      jwt    = require('jsonwebtoken'),
-      bcrypt = require('bcrypt'),
-      config = require('../config'),
-      User   = require('../models/users.js');
+const router     = require('express').Router(),
+      jwt        = require('jsonwebtoken'),
+      expressjwt = require('express-jwt');
+      bcrypt     = require('bcrypt'),
+      config     = require('../config'),
+      User       = require('../models/users.js');
 
 router.get("/users", function(req, res) {
   User.find({}, function (err, allUsers) {
@@ -54,6 +55,19 @@ function verifyToken(req, res, next) {
     next();
   });
 }
+
+// router.use(function (req, res, next) {
+//   var token = req.body.token || req.query.token || req.headers['x-access-token'];
+//   if (!token)
+//     return res.status(403).send({ auth: false, message: 'No token provided.' });
+//   jwt.verify(token, config.secret, function(err, decoded) {
+//     if (err)
+//     return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
+//     // if everything good, save to request for use in other routes
+//     req.userId = decoded.id;
+//     next();
+//   });
+// });
 
 router.post('/login', function(req, res) {
   User.findOne({ username: req.body.username }, function(err, user) {
