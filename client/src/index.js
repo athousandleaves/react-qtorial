@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import './index.css';
 import Home from './components/Home/Home';
 import Register from './components/Register/register';
@@ -10,6 +10,7 @@ import Topics from './components/Topics/Topics';
 import Menu from './components/menu';
 import ShowTopic from './components/Topics/showTopic';
 import ShowTutorial from './components/Tutorials/showTutorial';
+import Error from './components/404/404.js';
 import registerServiceWorker from './registerServiceWorker';
 
 
@@ -39,6 +40,7 @@ class Routes extends React.Component {
           <Route exact path='/topics/:id' component={ShowTopic} />
           <Route exact path='/tutorials/:id' component={ShowTutorial} />
           <Route exact path='/logout' component={Logout} />
+          <Route exact path='/404' component={Error} />
         </div>
       </BrowserRouter>
     )

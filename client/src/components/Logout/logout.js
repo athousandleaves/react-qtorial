@@ -4,7 +4,7 @@ export default class Logout extends Component {
 
   componentWillMount () {
     localStorage.removeItem('login');
-    window.location.pathname = '/';
+    setTimeout (() => { window.location.pathname = '/' }, 2000);
   }
 
   render() {
