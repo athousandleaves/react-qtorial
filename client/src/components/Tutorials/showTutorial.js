@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PostComment from './PostComment.js';
 
 export default class ShowTutorial extends Component {
   
@@ -34,20 +35,7 @@ export default class ShowTutorial extends Component {
 
         <hr/>
 
-        <div className="postCommentContainer">
-        <div>
-        <form className="submitCommentForm">
-            <input
-              type="text"
-              placeholder="Type comment here..."
-              name="comment[text]"
-            />
-            <button type="submit">
-              Save comment
-            </button>
-        </form>
-        </div>
-        </div>
+        <PostComment />
 
         <div className="showTutorialComments">
           <h2 className="commentsHeader">Comments</h2>
