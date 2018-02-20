@@ -17,6 +17,16 @@ router.get("/users", function(req, res) {
   });
 });
 
+router.get("/user/:id", function(req, res) {
+  User.findById(req.params.id, function(err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(foundUser);
+    }
+  });
+});
+
 router.post('/users', function(req, res) {
   var newUser = new User({username: req.body.username, password: req.body.password});
   User.create(newUser, function(err, user) {
