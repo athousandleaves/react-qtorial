@@ -40,7 +40,7 @@ class Routes extends React.Component {
           <Route exact path='/topics' component={Topics} />
           <Route exact path='/topics/:id' component={ShowTopic} />
           <Route exact path='/tutorials/:id' component={ShowTutorial} />
-          <Route authed={this.state.authed} exact path='/tutorials/post' component={PostNewTutorial} />
+          <Route path='/tutorials/post' render={(props) => (<PostNewTutorial {...props} authed={this.state.authed} />)}  />
           <Route exact path='/logout' component={Logout} />
           <Route exact path='/404' component={Error} />
         </div>
