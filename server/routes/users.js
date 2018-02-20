@@ -33,12 +33,13 @@ router.post('/users', function(req, res) {
     if (err) {
       console.log(err);
     } else {
+      console.log(user);
       // create the token
       var token = jwt.sign({ id: user._id }, config.secret, {
         expiresIn: 86400 // 24 hours
       });
     }
-    res.status(200).send({ auth: true, token: token, username: req.body.username })
+    res.status(200).send({ auth: true, token: token, username: req.body.username, id: user._id })
   }); 
 });
 
@@ -76,8 +77,8 @@ router.post('/login', function(req, res) {
     var token = jwt.sign({ id: user._id }, config.secret, {
       expiresIn: 86400 // 24 hours
     });
-
-    res.status(200).send({ auth: true, token: token, username: req.body.username })
+    console.log(user);
+    res.status(200).send({ auth: true, token: token, username: req.body.username, id: user._id })
   });
 });
 

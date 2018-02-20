@@ -1,7 +1,8 @@
-const router = require('express').Router(),
-  topics = require('../models/topics.js'),
-  tutorials = require('../models/tutorials.js');
-  comments = require('../models/comments.js');
+const router      = require('express').Router(),
+      topics      = require('../models/topics.js'),
+      tutorials   = require('../models/tutorials.js');
+      comments    = require('../models/comments.js');
+      verifyToken = require('./verifytoken');
 
 router.get("/topics", function (req, res) {
   topics.find({}, function (err, allTopics) {
@@ -59,5 +60,11 @@ router.get("/tutorials/:id", function (req, res) {
       }
     });
 });
+
+
+// POST - post a new tutorial
+router.post('/tutorials', function (req, res) {
+
+})
 
 module.exports = router;
