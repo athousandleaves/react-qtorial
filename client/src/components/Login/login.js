@@ -35,7 +35,7 @@ export default class Login extends Component {
     })
     .then(json => {
       localStorage.setItem('login', 
-        JSON.stringify({ username: json.username, token: json.token }));
+        JSON.stringify({ username: json.username, token: json.token, id: json.id }));
         window.location.pathname = '/'
     })
   }

@@ -513,3 +513,31 @@ hr {
   padding-top: 7em;
   text-align: center;
 }
+
+.postTutorialForm {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #31dc70;
+  font-family: 'Inconsolata', monospace;
+  
+}
+
+.form-group > button {
+  color: #31a2dc;  
+  font-family: 'Inconsolata', monospace;
+  font-size: 1em;
+  font-weight: bolder;
+  width: 125px;
+  text-decoration: none;
+  background-color: #25292F;  
+  border: 1px solid rgba(146, 250, 149, 0.6);
+  border-radius: 4px;
+  padding: 0.6em;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.5s;
+}
+
+.form-group > button:hover {
+  color: #fe8383;
+}

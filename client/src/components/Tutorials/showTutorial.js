@@ -44,7 +44,7 @@ export default class ShowTutorial extends Component {
             <div className="showCommentItem">
               <p className="commentAuthor">{comment.author.username}</p>
               <span className="commentText">{comment.text}</span>
-              <span className="commentDate">{comment.created}</span>
+              <span className="commentDate">{Date(comment.created)}</span>
             </div>
           )
         })}

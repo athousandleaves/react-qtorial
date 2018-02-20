@@ -25,7 +25,7 @@ class Routes extends React.Component {
   componentDidMount() {
     //determine if token is valid
     localStorage.getItem('login') ?
-    this.setState({ loading: false, authed: true, username: JSON.parse(localStorage.getItem('login')).username }) :
+    this.setState({ loading: false, authed: true, username: JSON.parse(localStorage.getItem('login')).username, id: JSON.parse(localStorage.getItem('login')).id }) :
     this.setState({ loading: false })
   }  
 
@@ -34,7 +34,7 @@ class Routes extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Menu authed={this.state.authed} username={this.state.username} />
+          <Menu authed={this.state.authed} username={this.state.username} id={this.state.id} />
           <Route exact path='/' component={Home} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />

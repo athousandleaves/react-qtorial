@@ -37,7 +37,7 @@ export default class Register extends Component {
     .then(json => {
       this.setState({ success: true })
       localStorage.setItem('login', 
-        JSON.stringify({ username: json.username, token: json.token }));
+        JSON.stringify({ username: json.username, token: json.token, id: json.id }));
         window.location.pathname = '/'
     })
   }
