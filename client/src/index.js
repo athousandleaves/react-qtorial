@@ -8,9 +8,10 @@ import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
 import Topics from './components/Topics/Topics';
 import Menu from './components/menu';
-import ShowTopic from './components/Topics/showTopic';
+import ShowTopic from './components/Topics/ShowTopic';
 import ShowTutorial from './components/Tutorials/ShowTutorial';
 import PostNewTutorial from './components/Tutorials/PostNewTutorial';
+import UserProfile from './components/User/UserProfile';
 import Error from './components/404/404.js';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -38,9 +39,10 @@ class Routes extends React.Component {
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/topics' component={Topics} />
-          <Route exact path='/topics/:id' component={ShowTopic} />
+          <Route path='/topics/:id' component={ShowTopic} />
           <Route exact path='/tutorials/:id' component={ShowTutorial} />
           <Route path='/tutorials/post' render={(props) => (<PostNewTutorial {...props} authed={this.state.authed} />)}  />
+          <Route path='/user/:id' render={(props) => (<UserProfile {...props} username={this.state.username} />)} />
           <Route exact path='/logout' component={Logout} />
           <Route exact path='/404' component={Error} />
         </div>
