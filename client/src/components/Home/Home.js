@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Splash from './splash';
-import RecentlyAdded from './recentlyadded';
+import Splash from './Splash';
+import RecentlyAdded from './RecentlyAdded';
 
 class Home extends Component {
   render() {

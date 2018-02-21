@@ -541,3 +541,9 @@ hr {
 .form-group > button:hover {
   color: #fe8383;
 }
+
+.userProfile {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1em 0;
+}
