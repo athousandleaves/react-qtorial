@@ -120,4 +120,28 @@ router.post("/tutorials", function(req, res) {
     })
 });
 
+// EDIT tutorial route
+router.get("/tutorials/:id/edit", function(req, res) {
+  tutorials.findById(req.params.id, function(err, foundtutorial) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(foundtutorial);
+      res.json(foundtutorial);
+    }
+  });
+});
+
+// UPDATE tutorial route
+router.put("/tutorials/:id", function(req, res) {
+  //find and update correct tutorial
+  tutorial.findByIdAndUpdate(req.params.id, req.body.tutorial, function(err, updatedtutorial) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(updatedtutorial);
+    }
+  });
+});
+
 module.exports = router;
