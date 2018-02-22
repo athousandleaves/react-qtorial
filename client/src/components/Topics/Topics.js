@@ -23,7 +23,7 @@ export default class Topics extends Component {
         <div className="allTopics">
           {this.state.topics.map(topic => {
             return (
-              <div className="alltopicsItem">
+              <div className="alltopicsItem" key={topic.name}>
                 <Link to={`/topics/${topic._id}`} className="topicLinkWrap" key={topic.name}>
                   <div className="alltopicsName">
                     <h2>{topic.name}</h2>

@@ -10,6 +10,7 @@ import Topics from './components/Topics/Topics';
 import Menu from './components/menu';
 import ShowTopic from './components/Topics/ShowTopic';
 import ShowTutorial from './components/Tutorials/ShowTutorial';
+import EditTutorial from './components/Tutorials/EditTutorial';
 import PostNewTutorial from './components/Tutorials/PostNewTutorial';
 import UserProfile from './components/User/UserProfile';
 import Error from './components/404/404.js';
@@ -41,7 +42,8 @@ class Routes extends React.Component {
           <Route exact path='/topics' component={Topics} />
           <Route path='/topics/:id' component={ShowTopic} />
           <Route exact path='/tutorials/:id' component={ShowTutorial} />
-          <Route path='/tutorials/post' render={(props) => (<PostNewTutorial {...props} authed={this.state.authed} />)}  />
+          <Route exact path='/tutorials/:id/edit' component={EditTutorial} />
+          <Route path='/tutorials/post' render={(props) => (<PostNewTutorial {...props} authed={this.state.authed} username={this.state.username} id={this.state.id} />)}  />
           <Route path='/user/:id' render={(props) => (<UserProfile {...props} username={this.state.username} />)} />
           <Route exact path='/logout' component={Logout} />
           <Route exact path='/404' component={Error} />

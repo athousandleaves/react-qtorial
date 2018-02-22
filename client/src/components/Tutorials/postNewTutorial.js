@@ -6,11 +6,16 @@ export default class PostNewTutorial extends Component {
     super(props);
     this.state = { 
       topics: null,
-      ID: {
+      videoID: {
         value: ''
+      },
+      selectedTopic: {
+        value: 'Node.js'
       }
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleVideoIDChange = this.handleVideoIDChange.bind(this);
+    this.handleTopicChange = this.handleTopicChange.bind(this);
   }
 
   componentDidMount() {
@@ -31,10 +36,27 @@ export default class PostNewTutorial extends Component {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ID: this.state.ID.value
+          videoID: this.state.videoID.value,
+          topic: this.state.selectedTopic.value,
+          username: this.props.username,
+          id: this.props.id
         })
       })
-      .then
+      .then(response =>  {
+        if (!response.ok) { window.location.pathname = '/404' }
+        return response.json()
+      })
+      .then(json => {
+        window.location.pathname = '/'
+      })
+  }
+
+  handleVideoIDChange = (e) => {
+    this.setState({ videoID: { value: e.target.value } })
+  }
+
+  handleTopicChange = (e) => {
+    this.setState({ selectedTopic: {value: e.target.value } })
   }
 
   render() {
@@ -47,31 +69,33 @@ export default class PostNewTutorial extends Component {
             <h2>
               <label>YouTube ID:</label>
             </h2>
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon3">
+            <div className="input-group">
+              <span className="input-group-addon">
                 <strong>https://www.youtube.com/watch?v=</strong>
               </span>
               <input
-                class="form-control"
+                className="form-control"
                 type="text"
                 placeholder="paste YouTube ID here"
                 name="videoID"
+                onChange={this.handleVideoIDChange}
               />
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Select topic:</label>
-              <select class="form-control" name="topic">
+              <select className="form-control" name="topic" value={this.state.selectedTopic.value} onChange={this.handleTopicChange}>
+              <option disabled>Select a topic</option>
                 {this.state.topics.map(topic => {
                   return (
-                    <option>
+                    <option key={topic.name}>
                       {topic.name}
                     </option>
                   );
                 })}
               </select>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <button>
                 Submit
               </button>
