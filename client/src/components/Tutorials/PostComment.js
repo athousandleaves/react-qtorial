@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class PostComment extends Component {
   render() {
+    if (!this.props.authed) return null;
     return (
       <div className="postCommentContainer">
         <div>

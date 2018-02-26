@@ -35,7 +35,7 @@ export default class ShowTutorial extends Component {
 
         <hr/>
 
-        <PostComment />
+        <PostComment authed={this.state.authed} username={this.state.username} id={this.state.id} />
 
         <div className="showTutorialComments">
           <h2 className="commentsHeader">Comments</h2>
