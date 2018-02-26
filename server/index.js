@@ -1,10 +1,11 @@
 require('dotenv').config();
 
-const app = require('express')(),
-  mongoose = require('mongoose'),
+const app    = require('express')(),
+  mongoose   = require('mongoose'),
   bodyParser = require('body-parser'),
-  tutorials = require("./routes/tutorials");
-  users     = require("./routes/users");
+  tutorials  = require("./routes/tutorials");
+  users      = require("./routes/users");
+  comments   = require('./routes/comments');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -16,6 +17,7 @@ app.use("/", (req, res, next) => {
 
 app.use(tutorials);
 app.use(users);
+app.use(comments);
 
 console.log(process.env.PORT);
 var url = process.env.DATABASEURL;
