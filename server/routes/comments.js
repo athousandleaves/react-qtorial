@@ -15,13 +15,13 @@ router.post("/tutorials/:id/comments/", function(req, res) {
           console.log(err);
         } else {
           //add username and id to comment
-          comment.author.id = req.user._id;
-          comment.author.username = req.user.username;
+          comment.author.id = req.body.id;
+          comment.author.username = req.body.username;
           //save comment
           comment.save();
           tutorial.comments.push(comment);
           tutorial.save();
-          res.redirect("/tutorials/" + tutorial._id);
+          res.json(comment);
         }
       });
     }
