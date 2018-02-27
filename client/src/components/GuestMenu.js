@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const GuestMenu = ({props}) => (
+const GuestMenu = props => (
     <div className="header">
       <a href="/" className="logoLink">
         <h1 className="logo">Qtorial</h1>
