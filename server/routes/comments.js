@@ -15,6 +15,7 @@ router.post("/tutorials/:id/comments/", function(req, res) {
           console.log(err);
         } else {
           //add username and id to comment
+          comment.text = req.body.text;
           comment.author.id = req.body.id;
           comment.author.username = req.body.username;
           //save comment
