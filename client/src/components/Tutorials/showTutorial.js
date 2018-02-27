@@ -35,7 +35,7 @@ export default class ShowTutorial extends Component {
 
         <hr/>
 
-        <PostComment authed={this.state.authed} username={this.state.username} id={this.state.id} />
+        {this.props.authed && <PostComment videoID={this.props.match.params.id} username={this.props.username} userID={this.props.id} />}
 
         <div className="showTutorialComments">
           <h2 className="commentsHeader">Comments</h2>
