@@ -8,6 +8,8 @@ import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
 import Topics from './components/Topics/Topics';
 import Menu from './components/menu';
+import UserMenu from './components/UserMenu';
+import GuestMenu from './components/GuestMenu';
 import ShowTopic from './components/Topics/ShowTopic';
 import ShowTutorial from './components/Tutorials/ShowTutorial';
 import EditTutorial from './components/Tutorials/EditTutorial';
@@ -35,7 +37,8 @@ class Routes extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Menu authed={this.state.authed} username={this.state.username} id={this.state.id} />
+          {/* <Menu authed={this.state.authed} username={this.state.username} id={this.state.id} /> */}
+          {this.state.authed ? <UserMenu username={this.state.username} id={this.state.id} /> : <GuestMenu />}
           <Route exact path='/' component={Home} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
