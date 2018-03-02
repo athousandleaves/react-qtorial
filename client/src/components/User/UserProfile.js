@@ -7,7 +7,7 @@ export default class UserProfile extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/user/${this.props.match.params.id}`)
+    fetch(`${process.env.REACT_APP_NODE_SERVER}/user/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(user => {
         console.log(user);

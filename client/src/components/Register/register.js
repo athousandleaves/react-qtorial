@@ -19,7 +19,7 @@ export default class Register extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8000/users', 
+    fetch(`${process.env.REACT_APP_NODE_SERVER}/users`, 
     { method: 'POST', 
       headers: {
         Accept: 'application/json',

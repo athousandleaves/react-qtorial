@@ -10,7 +10,7 @@ export default class ShowTutorial extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/tutorials/${this.props.match.params.id}`)
+    fetch(`${process.env.REACT_APP_NODE_SERVER}/tutorials/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(tutorial => {
         console.log(tutorial);

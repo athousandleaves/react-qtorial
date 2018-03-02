@@ -8,7 +8,7 @@ export default class Topics extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8000/topics")
+    fetch(`${process.env.REACT_APP_NODE_SERVER}/topics`)
       .then(res => res.json())
       .then(topics => {
         this.setState({ topics });

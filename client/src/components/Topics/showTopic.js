@@ -9,7 +9,7 @@ export default class showTopic extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/topics/${this.props.match.params.id}`)
+    fetch(`${process.env.REACT_APP_NODE_SERVER}/topics/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(topics => {
         console.log(topics);

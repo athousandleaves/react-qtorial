@@ -8,7 +8,7 @@ export default class RecentlyAdded extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/tutorials')
+    fetch(`${process.env.REACT_APP_NODE_SERVER}/tutorials`)
       .then(res => res.json())
       .then(tutorials => {
         this.setState({ tutorials });

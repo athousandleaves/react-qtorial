@@ -7,7 +7,7 @@ export default class EditTutorial extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/tutorials/${this.props.match.params.id}/edit`)
+  fetch(`${process.env.REACT_APP_NODE_SERVER}/tutorials/${this.props.match.params.id}/edit`)
     .then(res => res.json())
     .then(tutorial => {
       console.log(tutorial);

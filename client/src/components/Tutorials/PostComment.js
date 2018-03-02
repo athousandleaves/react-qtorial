@@ -20,7 +20,7 @@ export default class PostComment extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8000/tutorials/${this.props.videoID}/comments/`,
+    fetch(`${process.env.REACT_APP_NODE_SERVER}/tutorials/${this.props.videoID}/comments/`,
       {
         method: 'POST',
         headers: {
