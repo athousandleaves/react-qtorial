@@ -4,6 +4,7 @@ const router      = require("express").Router(),
       tutorials   = require("../models/tutorials.js");
       comments    = require("../models/comments.js");
       verifyToken = require("./verifytoken");
+      ensureUser  = require('./ensureUser');
 
 router.get("/topics", function(req, res) {
   topics.find({}, function(err, allTopics) {
@@ -121,7 +122,7 @@ router.post("/tutorials", function(req, res) {
 });
 
 // EDIT tutorial route
-router.get("/tutorials/:id/edit", function(req, res) {
+router.get("/tutorials/:id/edit", verifyToken, function(req, res) {
   tutorials.findById(req.params.id, function(err, foundtutorial) {
     if (err) {
       console.log(err);
