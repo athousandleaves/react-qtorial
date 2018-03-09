@@ -7,7 +7,17 @@ export default class EditTutorial extends Component {
   }
 
   componentDidMount() {
-  fetch(`${process.env.REACT_APP_NODE_SERVER}/tutorials/${this.props.match.params.id}/edit`)
+    localStorage.getItem('login') ?
+    this.setState({ loading: false, token: JSON.parse(localStorage.getItem('login')).token }) :
+    this.setState({ loading: false })
+
+
+  fetch(`${process.env.REACT_APP_NODE_SERVER}/tutorials/${this.props.match.params.id}/edit`,
+    {
+      headers: {
+        'x-access-token': this.state.token
+      }
+    })
     .then(res => res.json())
     .then(tutorial => {
       console.log(tutorial);

@@ -43,7 +43,7 @@ class Routes extends React.Component {
           <Route exact path='/topics' component={Topics} />
           <Route path='/topics/:id' component={ShowTopic} />
           <Route exact path='/tutorials/:id' render={(props) => (<ShowTutorial {...props} authed={this.state.authed} username={this.state.username} id={this.state.id} />)} />
-          <Route exact path='/tutorials/:id/edit' component={EditTutorial} />
+          <Route exact path='/tutorials/:id/edit' render={(props) => (<EditTutorial {...props} authed={this.state.authed} username={this.state.username} id={this.state.id} />)} />
           <Route path='/tutorials/post' render={(props) => (<PostNewTutorial {...props} authed={this.state.authed} username={this.state.username} id={this.state.id} />)}  />
           <Route path='/user/:id' render={(props) => (<UserProfile {...props} username={this.state.username} />)} />
           <Route exact path='/logout' component={Logout} />
